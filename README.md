@@ -110,15 +110,15 @@ The complete workflow includes:
 
 | Model               | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 | ------------------- | -------: | --------: | -----: | -------: | ------: |
-| Logistic Regression |       -- |        -- |     -- |       -- |      -- |
-| Decision Tree       |       -- |        -- |     -- |       -- |      -- |
-| Random Forest       |       -- |        -- |     -- |       -- |      -- |
-| XGBoost             |       -- |        -- |     -- |       -- |      -- |
-| LightGBM            |       -- |        -- |     -- |       -- |      -- |
-| CatBoost            |       -- |        -- |     -- |       -- |      -- |
+| Logistic Regression |   0.7175 |    0.3678 | 0.6981 |   0.4818 |  0.7736 |
+| Decision Tree       |   0.6920 |    0.3353 | 0.6491 |   0.4422 |  0.6986 |
+| Random Forest       |   0.7885 |    0.4337 | 0.4075 |   0.4202 |  0.7530 |
+| XGBoost             |   0.8141 |    0.5135 | 0.2151 |   0.3032 |  0.7655 |
+| LightGBM            |   0.7984 |    0.4240 | 0.2000 |   0.2718 |  0.7379 |
+| CatBoost            |   0.8162 |    0.5283 | 0.2113 |   0.3019 |  0.7634 |
 
-> *The final model is selected automatically based on evaluation metrics.*
-
+> ✅ **Best Model: Logistic Regression** — selected on **ROC-AUC (0.7736)** and **highest Recall (0.6981)**.
+> Churn is an imbalanced problem (~26% of customers actually churn), so looking at Accuracy alone is misleading. CatBoost/XGBoost have higher accuracy but very low recall (~0.21) — meaning they miss most of the actual churners. Logistic Regression catches the most churners (~70% recall) with the best ROC-AUC, which makes it the best choice for the business.
 ---
 
 # 📈 Business Outcomes
